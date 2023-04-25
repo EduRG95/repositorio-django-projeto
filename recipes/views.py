@@ -1,11 +1,9 @@
 from django.shortcuts import get_list_or_404, get_object_or_404, render
 
-from utils.recipes.factory import make_recipe
-
 from .models import Recipe
 
+# from utils.recipes.factory import make_recipe
 
-# Create your views here.
 def home(request):
     # essa função abaixo chama todas as receitas la do models,
     # foram importadas e ordenadas agora de tras para frente com o
@@ -13,7 +11,6 @@ def home(request):
     recipes = Recipe.objects.filter(
         is_published=True,
     ).order_by('-id')
-
 
     return render(request, 'recipes/pages/home.html', context={
         'recipes': recipes,
