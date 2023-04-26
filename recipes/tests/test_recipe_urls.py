@@ -1,5 +1,5 @@
 from django.test import TestCase
-from django.urls import resolve, reverse
+from django.urls import reverse
 
 
 class RecipeURLsTest(TestCase):
@@ -15,8 +15,8 @@ class RecipeURLsTest(TestCase):
         url = reverse('recipes:recipe', kwargs={'id': 1})
         self.assertEqual(url, '/recipes/1/')
 
+    def test_recipe_search_url_is_correct(self):
+        url = reverse('recipes:search')
+        self.assertEqual(url, '/recipes/search/')
 
-class RecipeViewsTest(TestCase):
-    def test_recipe_home_views_function_is_correct(self):
-        view = resolve('/')
-        self.assertTrue(True)
+# RED - GREEN - REFACTOR
