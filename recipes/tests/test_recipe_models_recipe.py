@@ -53,11 +53,11 @@ class RecipeModelTest(RecipeTestBase):
 
     def test_recipe_string_representation(self):
         needed = 'Testing Representation'
-        self.recipe.title = needed
+        self.recipe.title = 'Testing Representation'
         self.recipe.full_clean()
         self.recipe.save()
         self.assertEqual(
             str(self.recipe), needed,
-            msg=f'Recipe string representation must be '
-                f'"{needed}" but "{str(self.recipe)}" was received.'
+            msg=f'Recipe string representation must be'
+                f'"{needed}" but "{str(self.recipe)}" was received'
         )

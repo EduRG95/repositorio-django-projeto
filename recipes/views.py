@@ -4,6 +4,7 @@ from .models import Recipe
 
 # from utils.recipes.factory import make_recipe
 
+
 def home(request):
     # essa função abaixo chama todas as receitas la do models,
     # foram importadas e ordenadas agora de tras para frente com o
