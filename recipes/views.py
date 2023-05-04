@@ -1,14 +1,9 @@
 from django.shortcuts import get_list_or_404, get_object_or_404, render
 
-from .models import Recipe
-
-# from utils.recipes.factory import make_recipe
+from recipes.models import Recipe
 
 
 def home(request):
-    # essa função abaixo chama todas as receitas la do models,
-    # foram importadas e ordenadas agora de tras para frente com o
-    # simbolo - antes do id
     recipes = Recipe.objects.filter(
         is_published=True,
     ).order_by('-id')
@@ -25,6 +20,7 @@ def category(request, category_id):
             is_published=True,
         ).order_by('-id')
     )
+
     return render(request, 'recipes/pages/category.html', context={
         'recipes': recipes,
         'title': f'{recipes[0].category.name} - Category | '
