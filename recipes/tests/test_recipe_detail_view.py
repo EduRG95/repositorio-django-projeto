@@ -37,7 +37,7 @@ class RecipeDetailViewsTest(RecipeTestBase):
         self.assertIn(needed_title, content)
 
     def test_recipe_detail_template_dont_load_recipe_not_published(self):
-        """Test recipe is_publiched False dont show"""
+        """Test recipe is_published False dont show"""
         # Need a recipe for this test
         recipe = self.make_recipe(is_published=False)
         response = self.client.get(
